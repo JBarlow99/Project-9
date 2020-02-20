@@ -1,0 +1,15 @@
+hub:
+    container_name: Project_9
+    image: dockerprac:latest
+    ports:
+    - "8080:8080"
+    environment:
+    - John_Barlow
+    - GRID_TIMEOUT=30000
+    - GRID_BROWSER_TIMEOUT=30000
+    - GRID_MAX_SESSION=6
+chrome:
+    image: dockerprac:latest
+    links:
+    - hub
+    shm_size: 128M
